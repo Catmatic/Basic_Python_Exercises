@@ -1,7 +1,7 @@
 def worldinbox(x):
   """Prints messages in boxes.
 
-  >>> my_new_function(['a', 'list', 'of', 'strings'])
+  >>> worldinbox(['a', 'list', 'of', 'strings'])
   ***********
   * a       *
   * list    *
@@ -21,3 +21,5 @@ def worldinbox(x):
   output += "*" * (maxlength + 4)
   
   return(output)
+  
+print(worldinbox(['a', 'list', 'of', 'strings']))
