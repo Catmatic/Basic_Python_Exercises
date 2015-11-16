@@ -1,4 +1,4 @@
-def my_new_function(x):
+def worldinbox(x):
   """Prints messages in boxes.
 
   >>> my_new_function(['a', 'list', 'of', 'strings'])
@@ -14,13 +14,10 @@ def my_new_function(x):
     if len(word) >= maxlength:
       maxlength = len(word)
   
-  print("*" * (maxlength + 4))
+  output = "*" * (maxlength + 4) + "\n"
   for word in x:
     padding = (maxlength - len(word))
-    print("* {}{} *".format(word, (" " * padding)))
-  print("*" * (maxlength + 4))
-
-#if _name_ == '__main__':
-#  x = 'abc'
-
-my_new_function(['a', 'list', 'of', 'strings'])
+    output += "* {}{} *".format(word, (" " * padding)) + "\n"
+  output += "*" * (maxlength + 4)
+  
+  return(output)
