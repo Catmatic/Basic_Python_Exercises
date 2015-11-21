@@ -9,7 +9,7 @@ def odd_elements(targetlist):
     output = ""
     
     for i in targetlist:
-    #add list item to output string with comma if not last element.
+    #add list item to output string with period if last element.
         if i == targetlist[-1]:
         #Argh. This works, but if the same element recurs in the list it will
         #also have a period.
@@ -17,7 +17,7 @@ def odd_elements(targetlist):
                 output += "{}.".format(i)
             currentposition += 1
         else:
-        #add list item to output string with period if last element.
+        #add list item to output string with comma if not last element.
         #This code block is pasted from above. How can I do this without repeating?
             if currentposition % 2 == 1:
                 output += "{}, ".format(i)
