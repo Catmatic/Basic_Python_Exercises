@@ -1,6 +1,8 @@
+#The runtime of this operation is O(log n) - O(n)
+
 def binary_search(target, sorted_list):
 
-  """checks whether an number is present in a sorted list.
+  """checks whether a number is present in a sorted list.
   >>>binary_search(5, [1, 2, 4, 6, 7])
   False
   >>>binary_search(5, [1, 2, 4, 5, 7])
