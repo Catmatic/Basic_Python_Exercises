@@ -29,6 +29,7 @@ class Linkedlist(object):
                 node = node.nextnode
         return node
 
+    #still need to test edge cases!
     def append(self, x):
         if self.node.nextnode != None:
             currentnode = self.node.nextnode
@@ -42,15 +43,18 @@ class Linkedlist(object):
 
     def insert(self, *args):
         if len(args) == 2:
-            x = args[0]
-            i = args[1]
+            i = args[0]
+            x = args[1]
             node = self.get_node(i-1)
             node.nextnode = Node(x, node.nextnode)
+        if len(args) == 1:
+            x = args[0]
+            nextnode = self.node.nextnode
+            self.node = Node(x, self.node.nextnode)
 
     def printll(self):
         for n in range(0, testlist.lenlinked()):
             print(testlist.get_at(n))
-
 
 
 fourthnode = Node(123, None)
@@ -61,10 +65,12 @@ firstnode = Node(2, secondnode)
 testlist = Linkedlist(firstnode)
 testlist2 = Linkedlist(fourthnode)
 
+testlist.insert(3, "gralb")
+testlist.insert("genesis")
 #testlist.append("blarg")
 
 #testlist.insert(0, 994)
 
+#print(testlist.printll())
 
 print(testlist.printll())
-
