@@ -47,6 +47,12 @@ class Linkedlist(object):
             node = self.get_node(i-1)
             node.nextnode = Node(x, node.nextnode)
 
+    def printll(self):
+        for n in range(0, testlist.lenlinked()):
+            print(testlist.get_at(n))
+
+
+
 fourthnode = Node(123, None)
 thirdnode = Node(12, fourthnode)
 secondnode = Node(5, thirdnode)
@@ -55,15 +61,10 @@ firstnode = Node(2, secondnode)
 testlist = Linkedlist(firstnode)
 testlist2 = Linkedlist(fourthnode)
 
-print(testlist.get_at(3))
-
 #testlist.append("blarg")
-
-print(testlist.get_at(4))
 
 #testlist.insert(0, 994)
 
-#for n in range(0, len(testlist)):
-#    print(testlist.get_at(n))
 
-print(testlist2.lenlinked())
+print(testlist.printll())
+
