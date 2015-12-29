@@ -10,11 +10,23 @@ class Linkedlist(object):
     def get_at(self, n):
         return self.get_node(n).value
 
+    def lenlinked(self):
+        n = 1
+        if self.node.nextnode != None:
+            currentnode = self.node
+            while True:
+                n += 1
+                currentnode = currentnode.nextnode
+                if currentnode.nextnode == None:
+                    break
+        return n
+
     def get_node(self, n):
         node = self.node
         while n > 0:
             n -= 1
-            node = node.nextnode
+            if node.nextnode != None:
+                node = node.nextnode
         return node
 
     def append(self, x):
@@ -28,22 +40,30 @@ class Linkedlist(object):
                     break
                 currentnode = currentnode.nextnode 
 
-    def insert(self, x, i=0,):
-        node = self.get_node(i-1)
-        node.nextnode = Node(x, node.nextnode)
-    
+    def insert(self, *args):
+        if len(args) == 2:
+            x = args[0]
+            i = args[1]
+            node = self.get_node(i-1)
+            node.nextnode = Node(x, node.nextnode)
+
 fourthnode = Node(123, None)
 thirdnode = Node(12, fourthnode)
 secondnode = Node(5, thirdnode)
 firstnode = Node(2, secondnode)
 
 testlist = Linkedlist(firstnode)
+testlist2 = Linkedlist(fourthnode)
 
 print(testlist.get_at(3))
 
-testlist.append("blarg")
+#testlist.append("blarg")
 
 print(testlist.get_at(4))
 
+#testlist.insert(0, 994)
 
-    
+#for n in range(0, len(testlist)):
+#    print(testlist.get_at(n))
+
+print(testlist2.lenlinked())
